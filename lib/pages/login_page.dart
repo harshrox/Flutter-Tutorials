@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             Image.asset(
-              "assets/images/undraw_login.png",
+              "assets/images/undraw_login_1.png",
               fit: BoxFit.cover,
             ),
             SizedBox(
@@ -66,11 +66,14 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() {
                         changeButton = true;
                       });
-                      await Future.delayed(Duration(seconds: 1));
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      await Future.delayed(Duration(milliseconds: 400));
+                      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      setState(() {
+                        changeButton = false;
+                      });
                     },
                     child: AnimatedContainer(
-                      duration: Duration(seconds: 1),
+                      duration: Duration(milliseconds: 400),
                       height: 50,
                       width: changeButton?50:150,
                       // color: Colors.deepPurple,
